@@ -20,7 +20,21 @@ SECOND_PROFILE = {
         {'phrase':'best quality','replacement':'everyday essentials','source_id':'NW-COPY-01','severity':'Medium'},
         {'phrase':'buy now or regret it','replacement':'Explore the collection','source_id':'NW-COPY-01','severity':'Medium'}
     ],
-    'punctuation_source_id':'NW-VOICE-01'
+    'punctuation_source_id':'NW-VOICE-01',
+    'semantic_checks': [
+        {
+            'topic': 'Environmental and sustainability claims',
+            'source_id': 'NW-CLAIM-01',
+            'indicators': [
+                'sustainable clothing', 'kinder to the planet', 'better for the planet',
+                'environmentally friendly', 'eco-friendly clothing', 'green fashion',
+                'zero environmental impact', 'carbon neutral clothing',
+                'no environmental footprint',
+            ],
+            'required_terms': [],
+            'severity': 'High',
+        },
+    ],
 }
 SECOND_SAMPLE = 'Meet Nova Wear: best quality, 100% sustainable clothing with zero impact. Buy now or regret it!!!'
 BRAND_SAMPLES = {DEFAULT_PROFILE['name']: SAMPLE, SECOND_PROFILE['name']: SECOND_SAMPLE}
